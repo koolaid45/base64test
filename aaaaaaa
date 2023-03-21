@@ -1,41 +1,4 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local startgui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-
---Properties:
-
-startgui.Name = "startgui"
-startgui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-startgui.Enabled = false
-startgui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Parent = startgui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.Position = UDim2.new(0.245861217, 0, 0.115618661, 0)
-Frame.Size = UDim2.new(0, 460, 0, 270)
-
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(47, 255, 15)
-TextButton.Position = UDim2.new(0.0434782617, 0, 0.100000001, 0)
-TextButton.Size = UDim2.new(0, 416, 0, 204)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "lauch"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
--- Scripts:
-
-local function PKDH_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
-
-	local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 	function dec(data)
 		data = string.gsub(data, '[^'..b..'=]', '')
 		return (data:gsub('.', function(x)
@@ -51,9 +14,5 @@ local function PKDH_fake_script() -- TextButton.LocalScript
 		end))
 	end
 	script.Parent.MouseButton1Click:Connect(function()
-		local a = game:GetService("HttpService")
-		a:GetAsync("https://raw.githubusercontent.com/yesman01/base64test/main/main")
-		loadstring(dec(a))
+		loadstring(dec("bG9jYWwgbWFpbiA9IEluc3RhbmNlLm5ldygiU2NyZWVuR3VpIikKbG9jYWwgRnJhbWUgPSBJbnN0YW5jZS5uZXcoIkZyYW1lIikKbG9jYWwgVUlDb3JuZXIgPSBJbnN0YW5jZS5uZXcoIlVJQ29ybmVyIikKbG9jYWwgdGVzdCA9IEluc3RhbmNlLm5ldygiVGV4dExhYmVsIikKCgoKbWFpbi5OYW1lID0gIm1haW4iCm1haW4uUGFyZW50ID0gZ2FtZS5QbGF5ZXJzLkxvY2FsUGxheWVyOldhaXRGb3JDaGlsZCgiUGxheWVyR3VpIikKbWFpbi5aSW5kZXhCZWhhdmlvciA9IEVudW0uWkluZGV4QmVoYXZpb3IuU2libGluZwoKRnJhbWUuUGFyZW50ID0gbWFpbgpGcmFtZS5CYWNrZ3JvdW5kQ29sb3IzID0gQ29sb3IzLmZyb21SR0IoMzcsIDQ3LCA2NikKRnJhbWUuUG9zaXRpb24gPSBVRGltMi5uZXcoMC4yMjg2MDE2MDUsIDAsIDAuMjgzOTc1NjYxLCAwKQpGcmFtZS5TaXplID0gVURpbTIubmV3KDAsIDYwOCwgMCwgMzM2KQoKVUlDb3JuZXIuQ29ybmVyUmFkaXVzID0gVURpbS5uZXcoMCwgMTApClVJQ29ybmVyLlBhcmVudCA9IEZyYW1lCgp0ZXN0Lk5hbWUgPSAidGVzdCIKdGVzdC5QYXJlbnQgPSBGcmFtZQp0ZXN0LkJhY2tncm91bmRDb2xvcjMgPSBDb2xvcjMuZnJvbVJHQigyNTUsIDI1NSwgMjU1KQp0ZXN0LkJhY2tncm91bmRUcmFuc3BhcmVuY3kgPSAxLjAwMAp0ZXN0LlBvc2l0aW9uID0gVURpbTIubmV3KDAuMzM1NTI2MzE3LCAwLCAwLjQyNTU5NTIyNCwgMCkKdGVzdC5TaXplID0gVURpbTIubmV3KDAsIDIwMCwgMCwgNTApCnRlc3QuRm9udCA9IEVudW0uRm9udC5Tb3VyY2VTYW5zCnRlc3QuVGV4dCA9ICJ0ZXN0Igp0ZXN0LlRleHRDb2xvcjMgPSBDb2xvcjMuZnJvbVJHQigyNTUsIDk3LCA5NykKdGVzdC5UZXh0U2NhbGVkID0gdHJ1ZQp0ZXN0LlRleHRTaXplID0gMTQuMDAwCnRlc3QuVGV4dFdyYXBwZWQgPSB0cnVl"))
 	end)
-end
-coroutine.wrap(PKDH_fake_script)()
